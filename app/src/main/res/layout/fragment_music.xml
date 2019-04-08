@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.hp.mvvmtestdemo.viewmodel.ViewModelFragment"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/search_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.search_word}"
+            android:gravity="center_horizontal"
+            android:textSize="35sp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:background="#ddd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:layout_below="@id/search_word">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/error_info_layout"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="获取失败"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.errorInfoLayoutVisibility}"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
